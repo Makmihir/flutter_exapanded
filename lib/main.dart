@@ -18,14 +18,25 @@ class MyApp extends StatelessWidget {
                   number: 8,
                   color: Colors.red,
                 ),
-                  _customContainer(
-                      number: 5,
-                      color: Colors.indigo,
+                  Expanded(
+                      flex: 5,
+                      child: Row(
+                         children: [
+                           _customContainer(
+                             number: 5,
+                             color: Colors.indigo,
+                           ),
+                           _customContainer(
+                             number: 3,
+                             color: Colors.purple,
+                           ),
+                         ],
+                      )
                   )
-                ],
-                ),
-            ),
-        ),
+          ],
+         ),
+       ),
+      ),
     );
   }
 }
