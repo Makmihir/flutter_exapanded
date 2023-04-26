@@ -12,34 +12,41 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-            child: Row(
+            child: Column(
               children: [
-                Container(
-
-                  padding: EdgeInsets.all(20),
-                  color: Colors.lightBlue,
-                  child: Text('1'),
-                ),
-                Expanded(flex: 2,
-                  child: Container(
-                   // width: 70,
-                    padding: EdgeInsets.all(20),
-                    color: Colors.red,
-                    child: Text('2'),
+                Expanded(
+                  flex: 8,
+                  child:Container(
+                  constraints: BoxConstraints.expand(),
+                  color: Colors.red,
+                  child: Center(
+                    child: Text('8',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30
+                      ),),
                   ),
                 ),
-                Expanded(flex: 8,
+                ),
+                Expanded(
+                  flex: 5,
                   child: Container(
-                   // width: 100,
-                    padding: EdgeInsets.all(20),
-                    color: Colors.yellow,
-                    child: Text('3'),
+                  constraints: BoxConstraints.expand(),
+                  color: Colors.indigo,
+                  child: Center(
+                    child: Text('5',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30
+                      ),),
                   ),
                 )
-              ],
+                ),
+                ],
+                ),
             ),
         ),
-      ),
+
     );
   }
 }
