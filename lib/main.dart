@@ -26,9 +26,44 @@ class MyApp extends StatelessWidget {
                              number: 5,
                              color: Colors.indigo,
                            ),
-                           _customContainer(
-                             number: 3,
-                             color: Colors.purple,
+                           Expanded(
+                               flex: 3,
+                               child: Column(
+                                 children: [
+                                   Expanded(
+                                     flex:2,
+                                     child: Row(
+                                      children: [
+                                        Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              children: [
+                                                _customContainer(
+                                                  number: 1,
+                                                  color: Colors.green,
+                                                ),
+                                                _customContainer(
+                                                  number: 1,
+                                                  color: Colors.blue,
+                                                ),
+                                              ],
+                                            ),
+                                        ),
+
+                                        _customContainer(
+                                          number: 2,
+                                          color: Colors.brown,
+                                        ),
+                                      ],
+                                   ),
+                                   ),
+
+                                   _customContainer(
+                                     number: 3,
+                                     color: Colors.purple,
+                                   ),
+                                 ],
+                               ),
                            ),
                          ],
                       )
