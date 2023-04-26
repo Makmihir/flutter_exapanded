@@ -14,39 +14,38 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
             child: Column(
               children: [
-                Expanded(
-                  flex: 8,
-                  child:Container(
-                  constraints: BoxConstraints.expand(),
+                _customContainer(
+                  number: 8,
                   color: Colors.red,
-                  child: Center(
-                    child: Text('8',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30
-                      ),),
-                  ),
                 ),
-                ),
-                Expanded(
-                  flex: 5,
-                  child: Container(
-                  constraints: BoxConstraints.expand(),
-                  color: Colors.indigo,
-                  child: Center(
-                    child: Text('5',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30
-                      ),),
-                  ),
-                )
-                ),
+                  _customContainer(
+                      number: 5,
+                      color: Colors.indigo,
+                  )
                 ],
                 ),
             ),
         ),
-
     );
   }
+}
+
+Widget _customContainer({
+  required int number,
+  required Color color}){
+  return Expanded(
+      flex: number,
+      child:Container(
+      constraints: BoxConstraints.expand(),
+      color: color,
+      child: Center(
+      child: Text('${number}',
+      style: TextStyle(
+      color: Colors.white,
+      fontSize: 30
+          ),
+        ),
+       ),
+      ),
+   );
 }
